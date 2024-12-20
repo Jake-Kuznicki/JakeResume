@@ -4,12 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Player</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple-Teal Gradient */
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Audio Player Styling */
+    audio {
+      margin: 20px 0;
+      outline: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+    }
+
+    /* Image Styling */
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Link Styling */
+    .resume-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #ff6a00, #ee0979); /* Orange-Pink Gradient */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .resume-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated {
+      animation: fadeIn 1.5s ease-out;
+    }
+  </style>
 </head>
 <body>
-  <h1>Listen to Jake's Resume</h1>
-  <audio controls>
+  <h1 class="animated">Listen to Jake's Resume</h1>
+  
+  <!-- Image Section -->
+  <img src="profile-pic.jpg" alt="Jake's Profile Picture" class="profile-pic animated">
+
+  <!-- Audio Player -->
+  <audio controls class="animated">
     <source src="JakeAudioResume.wav" type="audio/wav">
     Your browser does not support the audio element.
   </audio>
+
+  <!-- Resume Link -->
+  <a href="JakeResume.txt" class="resume-link animated" download>Download Text Resume</a>
 </body>
 </html>
